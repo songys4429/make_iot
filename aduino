@@ -1,0 +1,14 @@
+void setup() {
+  pinMode(13, OUTPUT);
+  Serial.begin(9600);
+}
+void loop() {
+  String m = Serial.readStringUntil('\n');
+  if(m == "on") digitalWrite(13, HIGH);
+  if(m == "off") digitalWrite(13, LOW);
+  int on = analogRead(A0);
+  Serial.println(on);
+  int jo = analogRead(A1);
+  Serial.println(jo);
+  delay(500);
+}
